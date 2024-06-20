@@ -1,0 +1,6 @@
+export * from './personalInfo'
+export * from './educationalInfo'
+export * from './additionalInfo'
+export * from './workExperience'
+export * from './review'
+export * from './skills'
