@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AdditionalInfoForm, EducationForm, PersonalInfoForm, ReviewForm, SkillsForm, WorkExperienceForm } from './components/forms';
 import { clearForm } from './features/formSlice';
 import { ProgressBar } from './components/progressBar';
-import { SuccessMessage } from './components/successMessage/SuccessMessage';
 import choicetechlabLogo from './assets/choice.png';
 
 const App = () => {
@@ -58,14 +57,14 @@ const App = () => {
               Job Application
             </h1>
           </div>
-
-          <ProgressBar step={step} totalSteps={totalSteps} />
+          {!showSuccess &&
+            <ProgressBar step={step} totalSteps={totalSteps} />
+          }
 
           <Routes>
             <Route path="/" element={currentStepComponent()} />
           </Routes>
 
-          {showSuccess && step === totalSteps && <SuccessMessage />}
         </div>
       </div>
     </Router>

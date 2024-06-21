@@ -14,7 +14,8 @@ export const SkillsForm = ({ nextStep, prevStep }) => {
 
   const formik = useFormik({
     initialValues: {
-      technicalSkills: skills.length > 0 ? skills : '',
+      technicalSkills: skills.technicalSkills || '',
+      certificationDetails: skills.certificationDetails || '',
     },
     validationSchema: skillsValidationSchema,
     onSubmit: (values) => {

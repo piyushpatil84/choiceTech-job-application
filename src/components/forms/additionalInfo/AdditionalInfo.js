@@ -43,7 +43,8 @@ export const AdditionalInfoForm = ({ nextStep, prevStep }) => {
         type="file"
         accept=".pdf,.doc,.docx"
         name="resume"
-        onChange={(event) => formik.setFieldValue("resume", event.currentTarget.files[0])}
+        value={formik.values.resume}
+        onChange={(event) => formik.setFieldValue("resume", event.currentTarget?.files[0]?.name)}
         onBlur={formik.handleBlur}
         error={formik.touched.resume && formik.errors.resume}
         required={true}
